@@ -1,0 +1,30 @@
+.footer {
+  border: 1px solid var(--gray);
+  z-index: 1;
+}
+
+.footer-social-icons {
+  margin: 1rem auto;
+}
+
+.footer-social-icons a {
+  transition: 0.2s ease;
+  color: var(--footer-social-icons);
+  margin: 1rem;
+}
+
+.footer-social-icons a:hover {
+  color: var(--primary-color);
+}
+
+.footer-header {
+  letter-spacing: 0.5px;
+}
+
+.footer-header span {
+  color: var(--primary-color);
+}
+
+.footer-copy {
+  color: var(--primary-color);
+}
