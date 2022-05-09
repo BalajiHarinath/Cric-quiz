@@ -1,9 +1,16 @@
 import { v4 as uuid } from "uuid";
+import  { IPLTrophy, ODITrophy, T20Trophy, TestTrophy }  from "../../Assets/index";
 
 export const quizzes = [
   {
     _id: uuid(),
     name: "odi",
+    title: "One Day Cricket",
+    img: {
+            src: ODITrophy,
+            alt: "ODI-trophy",
+        },
+    description: "Do you really love OneDay Cricket ? Lets check...",
     questions: [
       {
         id: uuid(),
@@ -42,6 +49,12 @@ export const quizzes = [
   {
     _id: uuid(),
     name: "t20",
+    title: "T20 Cricket",
+    img: {
+            src: T20Trophy,
+            alt: "t20-trophy",
+        },
+    description: "Are you a T20holic ? If so this quiz is for you...",
     questions: [
       {
         id: uuid(),
@@ -81,6 +94,12 @@ export const quizzes = [
   {
     _id: uuid(),
     name: "test",
+    title: "Test Cricket",
+    img: {
+        src: TestTrophy,
+        alt: "test-trophy",
+    },
+    description: "Are you a great fan of Test Cricket ? Lets explore...",
     // difficulty: "hard",
     // genre: ["action", "adventure"],
     // poster: "",
@@ -114,6 +133,50 @@ export const quizzes = [
         question: "Who has taken the most number of wickets in test cricket?",
         options: ["Shane Warne", "Muralitharan", "Steyn", "Anil Kumble"],
         answer: "Muralitharan",
+      },
+    ],
+  },
+
+
+  {
+    _id: uuid(),
+    name: "ipl",
+    title: "IPL",
+    img: {
+        src: IPLTrophy,
+        alt: "ipl-trophy",
+    },
+    description: "Play this quiz if you are an IPL fan.",
+    questions: [
+      {
+        id: uuid(),
+        question: "When was the inaugural edition of IPL played?",
+        options: ["2007", "2008", "2009", "2010"],
+        answer: "2008",
+      },
+      {
+        id: uuid(),
+        question: "Who one the first ever IPL?",
+        options: ["RCB","CSK","RR","MI"],
+        answer: "RR",
+      },
+      {
+        id: uuid(),
+        question: "Who has won the most number of IPLs?",
+        options: ["CSK","MI","KKR","RCB"],
+        answer: "MI",
+      },
+      {
+        id: uuid(),
+        question: "Who has scored the most number of runs in IPL?",
+        options: ["Virat Kohli", "Rohit Sharma", "Chris Gayle", "Suresh Raina"],
+        answer: "Virat Kohli",
+      },
+      {
+        id: uuid(),
+        question: "Who scored the first IPL century?",
+        options: ["Virat Kohli", "Manish Pandey", "Brendon McCullum", "Chris Gayle"],
+        answer: "Brendon McCullum",
       },
     ],
   },

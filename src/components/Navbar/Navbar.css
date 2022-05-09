@@ -1,0 +1,17 @@
+.navbar {
+  padding: 1rem 3rem;
+  border-bottom: 1px solid var(--gray);
+}
+
+.nav-header {
+  flex: 1;
+  color: var(--primary-color);
+}
+
+.nav-icon {
+  color: var(--primary-color);
+}
+
+.nav-icon-text {
+  color: var(--primary-color);
+}
