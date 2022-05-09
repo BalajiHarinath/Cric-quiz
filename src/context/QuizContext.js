@@ -8,7 +8,10 @@ const QuizProvider = ({ children }) => {
     quizzesData: [],
     quizzesLoading: false,
   });
-  const [selectedQuiz, setSelectedQuiz] = useState({});
+  const [selectedQuiz, setSelectedQuiz] = useState({
+    selectedQuizData: {},
+    selectedQuizLoading: false,
+  });
   const [answers, setAnswers] = useState([]);
   const [score, setScore] = useState(0);
 
@@ -28,9 +31,34 @@ const QuizProvider = ({ children }) => {
     }
   };
 
+  const getCategoryData = async (_id) => {
+    setSelectedQuiz({ ...selectedQuiz, selectedQuizLoading: true });
+    try {
+      const response = await axios.get(`/api/quizzes/${_id}`);
+      if (response.status === 200) {
+        setSelectedQuiz({
+          selectedQuizData: response.data.quiz,
+          selectedQuizLoading: false,
+        });
+      }
+    } catch (error) {
+      console.error(error);
+      setSelectedQuiz({ ...selectedQuiz, selectedQuizLoading: false });
+    }
+  };
+
   return (
     <QuizContext.Provider
-      value={{ getAllQuizzes, quizzes, answers, setAnswers, score, setScore }}
+      value={{
+        getAllQuizzes,
+        getCategoryData,
+        quizzes,
+        selectedQuiz,
+        answers,
+        setAnswers,
+        score,
+        setScore,
+      }}
     >
       {children}
     </QuizContext.Provider>

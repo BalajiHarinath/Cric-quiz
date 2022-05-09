@@ -1,6 +1,6 @@
 :root {
   --primary-color: #761d77;
-  --primary-color-light: #803281;
+  --primary-color-light: #e2cae2;
   --secondary-color: #faf8f8;
   --secondary-color-light: #cfcccc1a;
   --secondary-color-dark: #eee5e5;
@@ -27,7 +27,7 @@
   --red: #eb1d1d;
   --green: #12be12;
   --white: #ffff;
-  --black: #0000;
+  --color-black: #0000;
 }
 
 /* Typography */

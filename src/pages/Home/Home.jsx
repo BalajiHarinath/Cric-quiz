@@ -1,11 +1,15 @@
 import "../../css/main.css";
 import "./Home.css";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
+import { Link } from "react-router-dom";
 import { HeroImage } from "../../Assets/index";
 import { useQuiz } from "../../context";
 import { Loader } from "../../components";
+import { useScrollToTop, useDocumentTitle } from "../../utils";
 
 export const Home = () => {
+  useScrollToTop();
+  useDocumentTitle("Cric Quiz | Home");
   const { getAllQuizzes, quizzes } = useQuiz();
   const { quizzesData, quizzesLoading } = quizzes;
 
@@ -42,12 +46,13 @@ export const Home = () => {
           {quizzesLoading && <Loader />}
           {!quizzesLoading &&
             quizzesData.map((category) => (
-              <div
+              <Link
                 className="category-item flex flex-justify-center flex-align-center"
                 id="oneday"
                 key={category._id}
+                to={`/rules/${category._id}`}
               >
-                <div className="quiz-homepage-card flex flex-column m-2 ">
+                <div className="quiz-homepage-card flex flex-column m-2">
                   <div className="quiz-homepage-card-img-container">
                     <img
                       className="quiz-homepage-card-img"
@@ -56,7 +61,7 @@ export const Home = () => {
                       alt={category?.img?.alt}
                     />
                   </div>
-                  <div className="homepage-category-textoverlay flex flex-justify-center flex-align-center font-semibold">
+                  <div className="homepage-category-textoverlay flex flex-justify-center flex-align-center text-2xl font-semibold">
                     Play Now
                   </div>
                   <div className="flex flex-column flex-gap-0-5 pd-1">
@@ -65,7 +70,7 @@ export const Home = () => {
                     <span className="font-semibold">5 Questions</span>
                   </div>
                 </div>
-              </div>
+              </Link>
             ))}
         </div>
       </div>
