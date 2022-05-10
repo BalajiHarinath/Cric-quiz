@@ -30,8 +30,6 @@ export const Question = () => {
     setAnswers([...answers, selectedAnswer]);
   };
 
-  console.log(answers);
-
   return (
     <main className="flex flex-grow-1 flex-justify-center flex-align-center">
       {Object.keys(questionData).length === 0 && <Loader />}
@@ -126,7 +124,7 @@ export const Question = () => {
             selectedQuizData.questions.length ? (
               <Link
                 to={``}
-                className="next-btn btn-solid btn-medium flex flex-justify-center flex-align-center"
+                className={`${selectedAnswer==="" ? "pointer-events-none" : ""} next-btn btn-solid btn-medium flex flex-justify-center flex-align-center`}
                 onClick={answersUpdateHandler}
               >
                 Result
@@ -134,7 +132,7 @@ export const Question = () => {
             ) : (
               <Link
                 to={`/question/${quizId}/${Number(questionNumber) + 1}`}
-                className="next-btn btn-solid btn-medium flex flex-justify-center flex-align-center"
+                className={`${selectedAnswer==="" ? "pointer-events-none" : ""} next-btn btn-solid btn-medium flex flex-justify-center flex-align-center`}
                 onClick={answersUpdateHandler}
               >
                 Next

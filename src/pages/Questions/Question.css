@@ -49,3 +49,8 @@ input[type="radio"] {
 .next-btn {
   height: 2rem;
 }
+
+.pointer-events-none {
+    pointer-events: none;
+    background-color: var(--primary-color-light);
+}
