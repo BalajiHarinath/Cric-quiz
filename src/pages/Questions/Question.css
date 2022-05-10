@@ -1,0 +1,56 @@
+.main-container {
+  border: 1px solid var(--border-color);
+  border-radius: 1rem;
+  width: 30rem;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+.option-label {
+  width: 100%;
+  padding: 0.7rem 0.5rem;
+  background-color: var(--primary-color-light);
+  text-align: center;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  transition: all 0.5s ease;
+  font-weight: bold;
+}
+
+.option-label:hover {
+  transform: translateX(5px);
+  color: var(--white);
+  background-color: var(--primary-color);
+}
+
+.option-selected {
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+
+.question-info {
+  color: var(--primary-color);
+}
+
+.question-info > span {
+  color: var(--red);
+}
+
+.next-btn {
+  box-shadow: none; 
+}
+
+.next-btn:hover {
+  transform: scale(1); 
+}
+
+.next-btn {
+  height: 2rem;
+}
+
+.pointer-events-none {
+    pointer-events: none;
+    background-color: var(--primary-color-light);
+}

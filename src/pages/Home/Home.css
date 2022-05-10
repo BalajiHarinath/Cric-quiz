@@ -12,10 +12,11 @@
 }
 
 .home-category-btn {
-  padding: 1rem;
+  padding: 1.3rem;
   width: fit-content;
   text-align: center;
   align-self: center;
+  font-size: medium;
 }
 
 .homepage-img {
@@ -28,6 +29,7 @@
 .category-item {
   cursor: pointer;
   position: relative;
+  color: #000000;
 }
 
 .category-item:hover {

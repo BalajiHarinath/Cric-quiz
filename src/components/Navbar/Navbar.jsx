@@ -1,12 +1,14 @@
 import "../../css/main.css";
 import "./Navbar.css";
+import { Link } from "react-router-dom";
+
 export const Navbar = () => {
   return (
     <nav className="navbar flex">
       <h2 className="nav-header">Cric Quiz</h2>
       <div className="nav-login flex flex-align-center flex-gap-2">
-        <a
-          href=""
+        <Link
+          to="/"
           className="flex flex-column flex-justify-center flex-align-center"
         >
           <span>
@@ -16,7 +18,7 @@ export const Navbar = () => {
             ></i>
           </span>
           <span className="nav-icon-text text-sm">Home</span>
-        </a>
+        </Link>
         <a
           href=""
           className="flex flex-column flex-justify-center flex-align-center"
