@@ -43,7 +43,7 @@ export const Question = () => {
               Question: <span>{Number(questionNumber) + 1}/5</span>
             </p>
             <p className="question-info text-sm">
-              Score: <span>10</span>
+              Points: <span>20</span>
             </p>
           </div>
           <p className="font-semibold flex flex-justify-center">
@@ -123,17 +123,21 @@ export const Question = () => {
             {Number(questionNumber) + 1 ===
             selectedQuizData.questions.length ? (
               <Link
-                to={``}
-                className={`${selectedAnswer==="" ? "pointer-events-none" : ""} next-btn btn-solid btn-medium flex flex-justify-center flex-align-center`}
                 onClick={answersUpdateHandler}
+                to="/result"
+                className={`${
+                  selectedAnswer === "" ? "pointer-events-none" : ""
+                } next-btn btn-solid btn-medium flex flex-justify-center flex-align-center`}
               >
                 Result
               </Link>
             ) : (
               <Link
-                to={`/question/${quizId}/${Number(questionNumber) + 1}`}
-                className={`${selectedAnswer==="" ? "pointer-events-none" : ""} next-btn btn-solid btn-medium flex flex-justify-center flex-align-center`}
                 onClick={answersUpdateHandler}
+                to={`/question/${quizId}/${Number(questionNumber) + 1}`}
+                className={`${
+                  selectedAnswer === "" ? "pointer-events-none" : ""
+                } next-btn btn-solid btn-medium flex flex-justify-center flex-align-center`}
               >
                 Next
               </Link>

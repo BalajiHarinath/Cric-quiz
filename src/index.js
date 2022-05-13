@@ -4,7 +4,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 import "./index.css";
 import App from "./App";
 import { makeServer } from "./server";
-import { QuizProvider } from "./context/index";
+import { QuizProvider, AuthProvider } from "./context/index";
 
 // Call make Server
 makeServer();
@@ -12,9 +12,11 @@ makeServer();
 ReactDOM.render(
   <React.StrictMode>
     <Router>
-      <QuizProvider>
-        <App />
-      </QuizProvider>
+      <AuthProvider>
+        <QuizProvider>
+          <App />
+        </QuizProvider>
+      </AuthProvider>
     </Router>
   </React.StrictMode>,
   document.getElementById("root")

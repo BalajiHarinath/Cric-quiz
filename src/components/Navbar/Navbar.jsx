@@ -1,13 +1,25 @@
 import "../../css/main.css";
 import "./Navbar.css";
 import { Link } from "react-router-dom";
+import { useQuiz, useAuth } from "../../context";
 
 export const Navbar = () => {
+  const { setAnswers, setScore } = useQuiz();
+  const { authData, logout } = useAuth();
+  const { _id, firstName } = authData;
+
+  const homeClickHandler = () => {
+    setScore(0);
+    setAnswers([]);
+  };
+  const userId = _id;
+
   return (
     <nav className="navbar flex">
       <h2 className="nav-header">Cric Quiz</h2>
       <div className="nav-login flex flex-align-center flex-gap-2">
         <Link
+          onClick={homeClickHandler}
           to="/"
           className="flex flex-column flex-justify-center flex-align-center"
         >
@@ -19,8 +31,8 @@ export const Navbar = () => {
           </span>
           <span className="nav-icon-text text-sm">Home</span>
         </Link>
-        <a
-          href=""
+        <Link
+          to="/signup"
           className="flex flex-column flex-justify-center flex-align-center"
         >
           <span>
@@ -29,8 +41,26 @@ export const Navbar = () => {
               aria-hidden="true"
             ></i>
           </span>
-          <span className="nav-icon-text text-sm">Login</span>
-        </a>
+          <span className="nav-icon-text text-sm">{`${userId ? firstName : "Login"}`}</span>
+        </Link>
+
+        {
+          userId && 
+          <Link
+          onClick={() => logout()}
+          to="/login"
+          className="flex flex-column flex-justify-center flex-align-center"
+          >
+            <span>   
+              <i
+                className="fa fa-sign-out fa-lg nav-icon text-2xl"
+                aria-hidden="true"
+              ></i>
+            </span>
+            <span className="nav-icon-text text-sm">Logout</span>
+        </Link>
+        }
+        
       </div>
     </nav>
   );
