@@ -95,7 +95,6 @@ const AuthProvider = ({ children }) => {
     });
   };
 
-  console.log("in auth context");
   return (
     <AuthContext.Provider
       value={{ authData, authErrorMsg, signup, login, testlogin, logout }}

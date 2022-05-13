@@ -12,7 +12,7 @@ export const Rules = () => {
   useDocumentTitle("Cric Quiz | Rules");
   const { quizId } = useParams();
   const { getCategoryData, selectedQuiz } = useQuiz();
-  const { selectedQuizLoading } = selectedQuiz;
+  const { selectedQuizLoading, selectedQuizData } = selectedQuiz;
 
   useEffect(() => {
     getCategoryData(quizId);
@@ -24,7 +24,7 @@ export const Rules = () => {
       {!selectedQuizLoading && (
         <article className="rules-container flex flex-column flex-align-center m-2">
           <h3 className="rules-header m-2">
-            Test Quiz Rules, read them carefully!!!
+            {selectedQuizData.title} Rules, read them carefully!!!
           </h3>
           <ul className="no-bullets flex flex-column flex-gap-1">
             {RulesData.map((rule, index) => (
