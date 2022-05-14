@@ -5,8 +5,7 @@ export const RestrictAuth = () => {
   const { authData } = useAuth();
   const userId = authData._id;
   const location = useLocation();
-  console.log(location?.state);
-  console.log(location?.state?.from?.pathname);
+
   return userId ? (
     <Navigate
       to={`${

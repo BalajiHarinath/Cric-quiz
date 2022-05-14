@@ -18,7 +18,6 @@
 }
 
 .form-field {
-  /* padding: 8px; */
   line-height: 2rem;
   outline: none;
   border: 1px solid var(--border-color1);
