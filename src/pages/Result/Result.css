@@ -1,0 +1,87 @@
+/*main*/
+.result-header {
+  color: var(--primary-color);
+}
+
+.prize-img {
+  height: fit-content;
+  width: 8rem;
+  object-fit: cover;
+}
+
+.result-container {
+  border: 1px solid var(--border-color);
+  border-radius: 1rem;
+  width: 30rem;
+}
+
+.option-container {
+  width: 100%;
+}
+
+.option-label-result {
+  width: inherit;
+  padding: 0.7rem 0.5rem;
+  background-color: var(--primary-color-light);
+  text-align: center;
+  border-radius: 0.5rem;
+}
+
+.final-score-info {
+  color: var(--primary-color);
+}
+
+.final-score-info > span {
+  color: var(--red);
+}
+
+.correct-ans {
+  background-color: var(--green);
+  color: var(--white);
+}
+
+.wrong-ans {
+  background-color: var(--red);
+  color: var(--white);
+}
+
+.finish-btn {
+  box-shadow: none;
+  height: 2rem;
+}
+
+.finish-btn:hover {
+  transform: scale(1);
+}
+
+/*Footer*/
+.footer {
+  border: 1px solid var(--gray);
+  z-index: 1;
+}
+
+.footer-social-icons {
+  margin: 1rem auto;
+}
+
+.footer-social-icons a {
+  transition: 0.2s ease;
+  color: var(--footer-social-icons);
+  margin: 1rem;
+}
+
+.footer-social-icons a:hover {
+  color: var(--primary-color);
+}
+
+.footer-header {
+  letter-spacing: 0.5px;
+}
+
+.footer-header span {
+  color: var(--primary-color);
+}
+
+.footer-copy {
+  color: var(--primary-color);
+}
