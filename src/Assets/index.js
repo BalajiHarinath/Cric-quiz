@@ -6,3 +6,4 @@ export { default as TestTrophy } from "./Images/test-championship-trophy.jpg";
 export { default as ResultTrophy } from "./Images/result-trophy.jpg";
 export { default as oops } from "./Images/oops.jpg";
 export { default as goodtry } from "./Images/goodtry.jpg";
+export { default as pagenotfound } from "./Images/page-not-found.jpg";

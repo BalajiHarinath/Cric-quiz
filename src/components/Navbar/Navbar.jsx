@@ -16,7 +16,12 @@ export const Navbar = () => {
 
   return (
     <nav className="navbar flex">
-      <h2 className="nav-header">Cric Quiz</h2>
+      <Link 
+        onClick={homeClickHandler}
+        to="/"
+        className="nav-header "
+        >Cric Quiz
+      </Link>
       <div className="nav-login flex flex-align-center flex-gap-2">
         <Link
           onClick={homeClickHandler}

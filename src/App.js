@@ -1,6 +1,6 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import { Home, MockmanAPI, Rules, Question, Result, SignUp, Login } from "./pages";
+import { Home, MockmanAPI, Rules, Question, Result, SignUp, Login, Error } from "./pages";
 import { Navbar, Footer, RestrictAuth, RequireAuth } from "./components";
 import "./App.css";
 
@@ -23,7 +23,7 @@ function App() {
           />
           <Route path="/result" element={<Result />} />
         </Route>
-        
+        <Route path="*" element={<Error />} />
         {/* <Route path="/mockman" element={<MockmanAPI />} /> */}
       </Routes>
       <Footer />
