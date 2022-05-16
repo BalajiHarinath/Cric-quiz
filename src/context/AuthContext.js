@@ -69,7 +69,6 @@ const AuthProvider = ({ children }) => {
         password: "testuser12345",
       });
       if (response.status === 200) {
-        console.log(response.data.foundUser);
         authDispatch({ type: "LOGIN", payload: response.data.foundUser });
       }
     } catch (error) {

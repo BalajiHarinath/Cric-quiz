@@ -26,6 +26,11 @@
 }
 
 /*Categories*/
+.container-category {
+  justify-content: center;
+  align-items: center;
+}
+
 .category-item {
   cursor: pointer;
   position: relative;
@@ -67,4 +72,40 @@
   height: 18rem;
   color: var(--red);
   z-index: 2;
+}
+
+/*Media Queries*/
+@media screen and (max-width: 1124px) {
+  .homepage-text {
+    display: none;
+  }
+
+  .homepage-text-img-container {
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .homepage-img {
+    height: 20rem;
+    width: 40rem;
+    border-radius: 2rem;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .homepage-img {
+    height: 20rem;
+    width: 45rem;
+    border-radius: 2rem;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .homepage-img {
+    height: 20rem;
+    width: 35rem;
+    border-radius: 2rem;
+  }
 }

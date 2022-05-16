@@ -31,10 +31,10 @@ export const Question = () => {
   };
 
   return (
-    <main className="flex flex-grow-1 flex-justify-center flex-align-center">
+    <main className="container-main flex flex-grow-1 flex-justify-center flex-align-center">
       {Object.keys(questionData).length === 0 && <Loader />}
       {Object.keys(questionData).length !== 0 && (
-        <div className="main-container flex flex-column flex-gap-2 mt-3 mb-3 pd-2">
+        <div className="container-question flex flex-column flex-gap-2 mt-3 mb-3 pd-2">
           <h4 className="flex flex-justify-center font-semibold">
             {selectedQuizData.quizTitle}
           </h4>
@@ -49,7 +49,7 @@ export const Question = () => {
           <p className="font-semibold flex flex-justify-center">
             {questionData.question}
           </p>
-          <div className="option-container flex flex-column flex-align-center flex-gap-1">
+          <div className="container-option flex flex-column flex-align-center flex-gap-1">
             <label
               htmlFor="option1"
               className={`${

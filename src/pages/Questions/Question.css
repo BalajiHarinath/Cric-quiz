@@ -1,4 +1,4 @@
-.main-container {
+.container-question {
   border: 1px solid var(--border-color);
   border-radius: 1rem;
   width: 30rem;
@@ -53,4 +53,16 @@ input[type="radio"] {
 .pointer-events-none {
     pointer-events: none;
     background-color: var(--primary-color-light);
+}
+
+
+@media screen and (max-width: 850px) {
+  .container-main {
+    align-items: flex-start;
+  }
+
+  .container-question{
+    margin-top: 6rem;
+    margin-bottom: 0;
+  }
 }
