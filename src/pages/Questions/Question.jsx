@@ -12,23 +12,17 @@ export const Question = () => {
   const { selectedQuiz, answers, setAnswers } = useQuiz();
   const { selectedQuizData } = selectedQuiz;
   let { questionNumber } = useParams();
+  questionNumber = Number(questionNumber)
   const [questionData, setQuestionData] = useState({});
-  const [selectedAnswer, setSelectedAnswer] = useState("");
-
   const quizId = selectedQuizData._id;
   const getQuestionData = () => {
     const requiredQuestion = selectedQuizData.questions[questionNumber];
     setQuestionData(requiredQuestion);
-    setSelectedAnswer("");
   };
 
   useEffect(() => {
     getQuestionData();
   }, [questionNumber, questionData]);
-
-  const answersUpdateHandler = () => {
-    setAnswers([...answers, selectedAnswer]);
-  };
 
   return (
     <main className="container-main flex flex-grow-1 flex-justify-center flex-align-center">
@@ -53,7 +47,7 @@ export const Question = () => {
             <label
               htmlFor="option1"
               className={`${
-                questionData.options[0] === selectedAnswer
+                questionData.options[0] === answers[questionNumber]
                   ? "option-label option-selected"
                   : "option-label"
               }`}
@@ -64,13 +58,13 @@ export const Question = () => {
               type="radio"
               id="option1"
               name="option"
-              onClick={() => setSelectedAnswer(questionData.options[0])}
+              onClick={() => setAnswers({...answers, [questionNumber]:questionData.options[0]})}
             />
 
             <label
               htmlFor="option2"
               className={`${
-                questionData.options[1] === selectedAnswer
+                questionData.options[1] === answers[questionNumber]
                   ? "option-label option-selected"
                   : "option-label"
               }`}
@@ -81,13 +75,13 @@ export const Question = () => {
               type="radio"
               id="option2"
               name="option"
-              onClick={() => setSelectedAnswer(questionData.options[1])}
+              onClick={() => setAnswers({...answers, [questionNumber]:questionData.options[1]})}
             />
 
             <label
               htmlFor="option3"
               className={`${
-                questionData.options[2] === selectedAnswer
+                questionData.options[2] === answers[questionNumber]
                   ? "option-label option-selected"
                   : "option-label"
               }`}
@@ -98,13 +92,13 @@ export const Question = () => {
               type="radio"
               id="option3"
               name="option"
-              onClick={() => setSelectedAnswer(questionData.options[2])}
+              onClick={() => setAnswers({...answers, [questionNumber]:questionData.options[2]})}
             />
 
             <label
               htmlFor="option4"
               className={`${
-                questionData.options[3] === selectedAnswer
+                questionData.options[3] === answers[questionNumber]
                   ? "option-label option-selected"
                   : "option-label"
               }`}
@@ -115,28 +109,41 @@ export const Question = () => {
               type="radio"
               id="option4"
               name="option"
-              onClick={() => setSelectedAnswer(questionData.options[3])}
+              onClick={() => setAnswers({...answers, [questionNumber]:questionData.options[3]})}
             />
           </div>
 
-          <div className="flex flex-justify-end">
+          <div className="flex flex-justify-space-between">
+          {Number(questionNumber) === 0 ? (
+              <Link
+                to={`/rules/${quizId}`}
+                className="next-btn btn-solid btn-medium flex flex-justify-center flex-align-center"
+              >
+                Rules
+              </Link>
+            ) : (
+              <Link
+                to={`/question/${quizId}/${Number(questionNumber) - 1}`}
+                className="next-btn btn-solid btn-medium flex flex-justify-center flex-align-center"
+              >
+                Prev
+              </Link>
+            )}
             {Number(questionNumber) + 1 ===
             selectedQuizData.questions.length ? (
               <Link
-                onClick={answersUpdateHandler}
                 to="/result"
                 className={`${
-                  selectedAnswer === "" ? "pointer-events-none" : ""
+                  answers[questionNumber] ? "" : "pointer-events-none"
                 } next-btn btn-solid btn-medium flex flex-justify-center flex-align-center`}
               >
                 Result
               </Link>
             ) : (
               <Link
-                onClick={answersUpdateHandler}
                 to={`/question/${quizId}/${Number(questionNumber) + 1}`}
                 className={`${
-                  selectedAnswer === "" ? "pointer-events-none" : ""
+                  answers[questionNumber] ? "" : "pointer-events-none"
                 } next-btn btn-solid btn-medium flex flex-justify-center flex-align-center`}
               >
                 Next
@@ -148,3 +155,5 @@ export const Question = () => {
     </main>
   );
 };
+
+
