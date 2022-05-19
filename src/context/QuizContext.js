@@ -12,7 +12,8 @@ const QuizProvider = ({ children }) => {
     selectedQuizData: {},
     selectedQuizLoading: false,
   });
-  const [answers, setAnswers] = useState([]);
+  // const [answers, setAnswers] = useState([]);
+  const [answers, setAnswers] = useState({})
   const [score, setScore] = useState(0);
 
   const getAllQuizzes = async () => {
