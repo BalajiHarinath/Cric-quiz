@@ -14,7 +14,7 @@ Live Preview:
 2. Rules page.
 3. Quiz page where user can select answers for the questions.
 4. After submission result will be displayed
-5. Result Page displays correct answers with wrong answer selected and score
+5. Result Page displays the answers chosen and also the right answers if the wrong answer is selected and the final score.
 
 ### Libraries used:
 
