@@ -42,7 +42,7 @@ export const Home = () => {
       <div className="flex flex-column flex-justify-center flex-align-center">
         <h3 id="Categories">Categories</h3>
 
-        <div className="flex flex-wrap m-2">
+        <div className="container-category flex flex-wrap m-2">
           {quizzesLoading && <Loader />}
           {!quizzesLoading &&
             quizzesData.map((category) => (
