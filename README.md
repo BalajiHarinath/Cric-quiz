@@ -4,7 +4,7 @@
 
 A Quiz App based on Cricket in which user can browse multiple Quizzes. There are four categories - ODI, T20, Test and IPL. Quiz can be played and after submission of quiz the user will be displayed with result and correct answers of the Questions which they have answered wrong.
 
-Live Preview: 
+##Live Preview: [Cric Quiz](https://cric-quiz-react.netlify.app/)
 
 ---
 
@@ -14,7 +14,7 @@ Live Preview:
 2. Rules page.
 3. Quiz page where user can select answers for the questions.
 4. After submission result will be displayed
-5. Result Page displays correct answers with wrong answer selected and score
+5. Result Page displays the answers chosen and also the right answers if the wrong answer is selected and the final score.
 
 ### Libraries used:
 
