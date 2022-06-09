@@ -5,4 +5,5 @@ export { Login } from "./Authentication/Login";
 export { Rules } from "./Rules/Rules";
 export { Question } from "./Questions/Question";
 export { Result } from "./Result/Result";
+export { Profile } from "./Profile/Profile";
 export { Error } from "./Error/Error";

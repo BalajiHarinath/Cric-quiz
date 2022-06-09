@@ -37,7 +37,7 @@ export const Navbar = () => {
           <span className="nav-icon-text text-sm">Home</span>
         </Link>
         <Link
-          to="/signup"
+          to={`${userId ? "/profile" : "/signup"}`} 
           className="flex flex-column flex-justify-center flex-align-center"
         >
           <span>
